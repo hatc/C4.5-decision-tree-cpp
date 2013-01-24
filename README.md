@@ -11,6 +11,7 @@
 ## Installation:
 
 download/fork repository in some folder
+
 download and unpack weka.jar from [weka-3-6-8.zip][1] to same folder
 
 ## Usage
