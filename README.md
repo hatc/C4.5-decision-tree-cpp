@@ -19,20 +19,22 @@ download and unpack weka.jar from [weka-3-6-8.zip][1] to same folder
 
 1) Build classifier for training set
 ```
-java -cp weka.jar;. Build <training_set>.arff [<X>] [<classifier class name>]
+java -cp .:weka.jar Build <training_set>.arff [<X>] [<classifier class name>]
 ```
 
 where &lt;X&gt; is class index, i.e. index of attribute used for build decision tree, defaults for number of attributes - 1
+
 and &lt;classifier class name&gt; defaults to WekaJ48Classifier
 
 >produce: WekaJ48Classifier.java
 
 2) Translate java source code to c++
 ```
-python java.weka.parser.py WekaJ48Classifier.java [-cn <classifier java class name>] [-o <cpp file name>]
+./java.weka.parser.py WekaJ48Classifier.java [-cn <classifier java class name>] [-o <cpp file name>]
 ```
 
 where &lt;classifier java class name&gt; defaults to Java source file name
+
 and &lt;cpp file name&gt; defaults to main.cpp
 
 >produce: main.cpp
@@ -95,10 +97,12 @@ javac -cp weka.jar -Xlint:unchecked TestClassifier.java IterableEnumeration.java
 
 8) Classify data.csv
 ```
-java -cp weka.jar;. TestClassifier data.arff>java_results
+java -cp .:weka.jar TestClassifier data.arff>java_results
 ```
 
 9) Compare results
+```
 diff -q cpp_results java_results
+```
 
   [1]: http://sourceforge.net/projects/weka/files/weka-3-6/3.6.8/weka-3-6-8.zip/download
