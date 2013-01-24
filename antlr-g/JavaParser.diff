@@ -1,0 +1,101 @@
+--- JavaParser.output.py Thu Dec 27 22:56:11 2012
++++ JavaParser.py Thu Sep 20 01:27:28 2012
+@@ -1,4 +1,4 @@
+-# $ANTLR 3.4 Java.g 2012-12-27 21:56:11
++# $ANTLR 3.4 Java.g 2012-09-20 01:12:56
+ 
+ import sys
+ from antlr3 import *
+@@ -1022,7 +1022,7 @@
+ 
+     # $ANTLR start "classTypeDeclaration"
+     # Java.g:276:1: classTypeDeclaration[CommonTree modifiers] : CLASS IDENT ( genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody -> ^( CLASS IDENT ( genericTypeParameterList )? ( classExtendsClause )? ( implementsClause )? classBody ) ;
+-    def classTypeDeclaration(self, CommonTree modifiers):
++    def classTypeDeclaration(self, modifiers): #(self, CommonTree modifiers)
+         retval = self.classTypeDeclaration_return()
+         retval.start = self.input.LT(1)
+ 
+@@ -2243,7 +2243,7 @@
+ 
+     # $ANTLR start "enumTypeDeclaration"
+     # Java.g:321:1: enumTypeDeclaration[CommonTree modifiers] : ENUM IDENT ( implementsClause )? enumBody -> ^( ENUM IDENT ( implementsClause )? enumBody ) ;
+-    def enumTypeDeclaration(self, CommonTree modifiers):
++    def enumTypeDeclaration(self, modifiers): #(self, CommonTree modifiers)
+         retval = self.enumTypeDeclaration_return()
+         retval.start = self.input.LT(1)
+ 
+@@ -3023,7 +3023,7 @@
+ 
+     # $ANTLR start "interfaceTypeDeclaration"
+     # Java.g:348:1: interfaceTypeDeclaration[CommonTree modifiers] : INTERFACE IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody -> ^( INTERFACE IDENT ( genericTypeParameterList )? ( interfaceExtendsClause )? interfaceBody ) ;
+-    def interfaceTypeDeclaration(self, CommonTree modifiers):
++    def interfaceTypeDeclaration(self, modifiers): #(self, CommonTree modifiers)
+         retval = self.interfaceTypeDeclaration_return()
+         retval.start = self.input.LT(1)
+ 
+@@ -11401,7 +11401,7 @@
+ 
+     # $ANTLR start "annotationTypeDeclaration"
+     # Java.g:631:1: annotationTypeDeclaration[CommonTree modifiers] : AT INTERFACE IDENT annotationBody -> ^( AT IDENT annotationBody ) ;
+-    def annotationTypeDeclaration(self, CommonTree modifiers):
++    def annotationTypeDeclaration(self, modifiers): #(self, CommonTree modifiers)
+         retval = self.annotationTypeDeclaration_return()
+         retval.start = self.input.LT(1)
+ 
+@@ -14344,7 +14344,7 @@
+ 
+ 
+                     # AST Rewrite
+-                    # elements: statement, IDENT
++                    # elements: IDENT, statement
+                     # token labels: 
+                     # rule labels: retval
+                     # token list labels: 
+@@ -22321,8 +22321,6 @@
+ 
+     # $ANTLR start "synpred42_Java"
+     def synpred42_Java_fragment(self, ):
+-         = None
+-
+         # Java.g:371:13: ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) |ident= IDENT formalParameterList ( throwsClause )? block ) )
+         # Java.g:371:13: ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) |ident= IDENT formalParameterList ( throwsClause )? block )
+         pass 
+@@ -22570,8 +22568,6 @@
+ 
+     # $ANTLR start "synpred43_Java"
+     def synpred43_Java_fragment(self, ):
+-         = None
+-
+         # Java.g:370:9: ( modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) |ident= IDENT formalParameterList ( throwsClause )? block ) | type classFieldDeclaratorList SEMI ) )
+         # Java.g:370:9: modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) |ident= IDENT formalParameterList ( throwsClause )? block ) | type classFieldDeclaratorList SEMI )
+         pass 
+@@ -23465,8 +23461,6 @@
+ 
+     # $ANTLR start "synpred101_Java"
+     def synpred101_Java_fragment(self, ):
+-         = None
+-
+         # Java.g:584:13: ( DOT ident= IDENT )
+         # Java.g:584:13: DOT ident= IDENT
+         pass 
+@@ -23626,9 +23620,6 @@
+ 
+     # $ANTLR start "synpred121_Java"
+     def synpred121_Java_fragment(self, ):
+-         = None
+-
+-
+         # Java.g:681:13: ( ELSE elseStat= statement )
+         # Java.g:681:13: ELSE elseStat= statement
+         pass 
+@@ -23811,10 +23802,6 @@
+ 
+     # $ANTLR start "synpred226_Java"
+     def synpred226_Java_fragment(self, ):
+-         = None
+-         = None
+-         = None
+-
+         # Java.g:945:13: (outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression ) )
+         # Java.g:945:13: outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
+         pass 

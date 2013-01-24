@@ -1,0 +1,7 @@
+*.slo
+*.lo
+*.o
+*.class
+!Build.class
+*.jar
+*.py[cod]
